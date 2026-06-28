@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+
+    <h1 class="display-4">
+        🔒 Evidence Guard
+    </h1>
+
+    <p class="lead">
+        Digital Evidence Management System
+    </p>
+
+    <hr>
+
+    <p>
+        Securely upload, verify, manage and track digital evidence using
+        SHA-256 hashing and Chain of Custody.
+    </p>
+
+    <br>
+
+    <a href="/dashboard" class="btn btn-primary btn-lg">
+        Go to Dashboard
+    </a>
+
+    <a href="/upload" class="btn btn-success btn-lg">
+        Upload Evidence
+    </a>
+
+</div>
+
+<br><br>
+
+<div class="row">
+
+    <div class="col-md-4">
+
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>🔐 Secure</h3>
+
+                <p>
+                    SHA-256 hashing ensures evidence integrity.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>📜 Track</h3>
+
+                <p>
+                    Complete Chain of Custody logging.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow">
+
+            <div class="card-body text-center">
+
+                <h3>📄 Reports</h3>
+
+                <p>
+                    Generate downloadable PDF reports.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

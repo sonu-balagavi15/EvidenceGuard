@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">📜 Evidence History</h2>
+
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+
+        <h5>Filename</h5>
+        <p>{{ evidence.filename }}</p>
+
+        <h5>SHA-256 Hash</h5>
+
+        <div class="alert alert-secondary">
+            {{ evidence.file_hash }}
+        </div>
+
+    </div>
+
+</div>
+
+<table class="table table-bordered table-striped">
+
+    <thead class="table-dark">
+
+        <tr>
+            <th>ID</th>
+            <th>Action</th>
+            <th>User</th>
+            <th>Time</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for log in logs %}
+
+        <tr>
+
+            <td>{{ log.id }}</td>
+            <td>{{ log.action }}</td>
+            <td>{{ log.username }}</td>
+            <td>{{ log.timestamp }}</td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+<a href="/dashboard" class="btn btn-primary">
+    Back to Dashboard
+</a>
+
+{% endblock %}

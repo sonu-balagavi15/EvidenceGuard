@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="mb-4">📊 System Reports</h2>
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            <div class="card bg-primary text-white shadow">
+                <div class="card-body text-center">
+                    <h4>Total Users</h4>
+                    <h2>{{ total_users }}</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-success text-white shadow">
+                <div class="card-body text-center">
+                    <h4>Total Evidence</h4>
+                    <h2>{{ total_evidence }}</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card bg-warning shadow">
+                <div class="card-body text-center">
+                    <h4>Total Logs</h4>
+                    <h2>{{ total_logs }}</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h4>📋 Report Summary</h4>
+
+    <table class="table table-bordered">
+
+        <tr>
+            <th>Total Registered Users</th>
+            <td>{{ total_users }}</td>
+        </tr>
+
+        <tr>
+            <th>Total Evidence Files</th>
+            <td>{{ total_evidence }}</td>
+        </tr>
+
+        <tr>
+            <th>Total Custody Logs</th>
+            <td>{{ total_logs }}</td>
+        </tr>
+
+        <tr>
+            <th>Evidence Verification</th>
+            <td>Enabled ✅</td>
+        </tr>
+
+        <tr>
+            <th>Database Status</th>
+            <td>Healthy ✅</td>
+        </tr>
+
+    </table>
+
+    <a href="/admin" class="btn btn-primary">
+        ← Back to Admin
+    </a>
+
+</div>
+
+{% endblock %}

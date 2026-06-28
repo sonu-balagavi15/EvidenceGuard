@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>📁 Evidence Details</h2>
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<p><strong>Evidence ID:</strong> {{ evidence.id }}</p>
+
+<p><strong>Filename:</strong> {{ evidence.filename }}</p>
+
+<p><strong>SHA-256 Hash:</strong></p>
+
+<div class="alert alert-secondary">
+{{ evidence.file_hash }}
+</div>
+
+<p><strong>Uploaded:</strong> {{ evidence.upload_time }}</p>
+
+<a href="/view/{{ evidence.id }}" class="btn btn-info">
+Preview
+</a>
+
+<a href="/download/{{ evidence.id }}" class="btn btn-danger">
+Download PDF
+</a>
+
+</div>
+
+</div>
+
+<br>
+
+<h4>Chain of Custody</h4>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>ID</th>
+<th>Action</th>
+<th>User</th>
+<th>Time</th>
+
+</tr>
+
+{% for log in logs %}
+
+<tr>
+
+<td>{{ log.id }}</td>
+<td>{{ log.action }}</td>
+<td>{{ log.username }}</td>
+<td>{{ log.timestamp }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

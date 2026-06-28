@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="mb-4">✏️ Edit Evidence</h2>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label class="form-label">Filename</label>
+
+                    <input
+                        type="text"
+                        name="filename"
+                        class="form-control"
+                        value="{{ evidence.filename }}"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">SHA-256 Hash</label>
+
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        readonly>{{ evidence.file_hash }}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Upload Time</label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        value="{{ evidence.upload_time }}"
+                        readonly>
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    💾 Save Changes
+                </button>
+
+                <a href="/dashboard" class="btn btn-secondary">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

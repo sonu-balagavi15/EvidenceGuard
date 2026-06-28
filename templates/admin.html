@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="mb-4">🛡️ Admin Dashboard</h2>
+
+    <!-- Statistics -->
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="card bg-primary text-white shadow">
+
+                <div class="card-body text-center">
+
+                    <h5>Total Users</h5>
+                    <h2>{{ total_users }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card bg-success text-white shadow">
+
+                <div class="card-body text-center">
+
+                    <h5>Total Evidence</h5>
+                    <h2>{{ total_evidence }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card bg-warning text-dark shadow">
+
+                <div class="card-body text-center">
+
+                    <h5>Custody Logs</h5>
+                    <h2>{{ total_logs }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card bg-danger text-white shadow">
+
+                <div class="card-body text-center">
+
+                    <h5>Status</h5>
+                    <h2>🟢 Online</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- Quick Actions -->
+
+    <h4>🚀 Quick Actions</h4>
+
+    <div class="mb-4">
+
+        <a href="/dashboard" class="btn btn-primary">
+            📁 Dashboard
+        </a>
+
+        <a href="/upload" class="btn btn-success">
+            📤 Upload
+        </a>
+
+        <a href="/logs" class="btn btn-info">
+            📜 Custody Logs
+        </a>
+
+        <a href="/search" class="btn btn-secondary">
+            🔍 Search
+        </a>
+
+        <a href="/users" class="btn btn-dark">
+            👥 Users
+        </a>
+
+        <a href="/backup" class="btn btn-danger">
+            💾 Backup
+        </a>
+        <a href="/reports" class="btn btn-warning">
+            📊 Reports
+        </a>
+        <a href="/system" class="btn btn-outline-dark">
+            💻 System Info
+        </a>
+
+    </div>
+
+    <hr>
+
+    <!-- System Summary -->
+
+    <div class="alert alert-success">
+
+        <h5>📊 System Summary</h5>
+
+        <ul class="mb-0">
+
+            <li><strong>Total Registered Users:</strong> {{ total_users }}</li>
+
+            <li><strong>Total Evidence Files:</strong> {{ total_evidence }}</li>
+
+            <li><strong>Total Custody Records:</strong> {{ total_logs }}</li>
+
+            <li><strong>SHA-256 Verification:</strong> Enabled ✅</li>
+
+            <li><strong>Database Backup:</strong> Enabled ✅</li>
+
+        </ul>
+
+    </div>
+
+    <hr>
+
+    <!-- Recent Activity -->
+
+    <h4>📋 Recent Activity</h4>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+
+            <tr>
+
+                <th>Evidence ID</th>
+                <th>Action</th>
+                <th>User</th>
+                <th>Date & Time</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% if recent_logs %}
+
+            {% for log in recent_logs %}
+
+            <tr>
+
+                <td>{{ log.evidence_id }}</td>
+                <td>{{ log.action }}</td>
+                <td>{{ log.username }}</td>
+                <td>{{ log.timestamp }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        {% else %}
+
+            <tr>
+
+                <td colspan="4" class="text-center">
+                    No recent activity found.
+                </td>
+
+            </tr>
+
+        {% endif %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}
