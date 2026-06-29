@@ -62,8 +62,8 @@ EvidenceGuard/
 ### Upload Evidence
 ![Upload](screenshots/uploadpage.png)
 
-### Evidence Details
-![Evidence Details](screenshots/evidence-details.png)
+### Evidence
+![Evidence](screenshots/evidence.png)
 
 ### Home Page
 ![Home Page](screenshots/homepage.png)
