@@ -65,8 +65,8 @@ EvidenceGuard/
 ### Evidence Details
 ![Evidence Details](screenshots/evidence-details.png)
 
-### Chain of Custody
-![Chain of Custody](screenshots/custody-log.png)
+### Home Page
+![Home Page](screenshots/homepage.png)
 
 ## Author
 
