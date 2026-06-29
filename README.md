@@ -51,6 +51,23 @@ EvidenceGuard/
 - Cloud storage integration
 - Multi-user role management
 
+- ## 📸 Screenshots
+
+### Login Page
+![Login](screenshots/loginpage.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Upload Evidence
+![Upload](screenshots/uploadpage.png)
+
+### Evidence Details
+![Evidence Details](screenshots/evidence-details.png)
+
+### Chain of Custody
+![Chain of Custody](screenshots/custody-log.png)
+
 ## Author
 
 **Sonu**
